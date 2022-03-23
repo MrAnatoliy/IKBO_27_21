@@ -1,0 +1,6 @@
+﻿  TwoDimArr.cpp
+D:\ВУЗ\СИАОД\Задание 2 - Двумерные массивы\TwoDimArr\TwoDimArr.cpp(74,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+D:\ВУЗ\СИАОД\Задание 2 - Двумерные массивы\TwoDimArr\TwoDimArr.cpp(77,32): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+D:\ВУЗ\СИАОД\Задание 2 - Двумерные массивы\TwoDimArr\TwoDimArr.cpp(142,34): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
+D:\ВУЗ\СИАОД\Задание 2 - Двумерные массивы\TwoDimArr\TwoDimArr.cpp(164,34): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
+  TwoDimArr.vcxproj -> D:\ВУЗ\СИАОД\Задание 2 - Двумерные массивы\TwoDimArr\x64\Debug\TwoDimArr.exe
