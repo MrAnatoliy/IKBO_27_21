@@ -1,7 +1,10 @@
 ﻿#include <iostream>
 #include <ctime>
 #include <string>
+#include <vector>
+#include <math.h>
 #define strip cout << "\n-----------------------------\n"
+#define size 3
 
 using namespace std;
 
@@ -58,7 +61,6 @@ void add_row_to_row(float** matrix, int n, int r1, int r2, float co) {
         matrix[r1 + n][y] += matrix[r2 + n][y] * co;
     }
 }
-
 
 void hand_array_input(float** matrix, int n) {
     strip;
@@ -188,6 +190,123 @@ int prot_input(int min, int max) {
     return inp;
 }
 
+//----------------------------------------------------------------------------------------------
+
+struct Point {
+    int x, y;
+};
+
+void hand_points_fill(vector <Point>* points) {
+    for (int i = 0; i < size; i++){
+        int x, y;
+        cin >> x >> y;
+        points->push_back({ x,y });
+    }
+}
+
+void random_points_fill(vector <Point>* points, Point min, Point max) {
+    srand(time(0));
+    for (int i = 0; i < size; i++) {
+        int x, y;
+        x = rand() % max.x + min.x;
+        y = rand() % max.y + min.y;
+        points->push_back({ x,y });
+    }
+}
+
+void display_points(vector <Point>* points) {
+    for (int i = 0; i < size; i++) {
+        cout << "(" << points->at(i).x << "," << points->at(i).y << ")" << endl;
+    }
+}
+
+string disp_point(Point p) {
+    return '(' + to_string(p.x) + ',' + to_string(p.y) + ')';
+}
+
+bool checks_points(vector <Point>* points, int p1, int p2) {
+    cout << "Now : " << disp_point(points->at(p1)) << " " << disp_point(points->at(p2)) << endl;
+    double x1, x2, y1, y2;
+    x1 = points->at(p1).x;
+    x2 = points->at(p2).x;
+    y1 = points->at(p1).y;
+    y2 = points->at(p2).y;
+
+    double k = (y2 - y1) / (x2 - x1);
+    double angle = abs(atan(k) * 180 / 3.1415926535);
+
+    bool check_y;
+
+    if (angle < 45 || angle > 135) {
+        //check by y
+        check_y = true;
+    }
+    else {
+        check_y = false;
+    }
+
+    bool is_on_one_side = true;
+    bool side = true; // true - left, false - rigth
+    int zero = 0;
+    for (int i = 0; i < size; i++) {
+        double x, y;
+        if (i == p1 || i == p2) {
+            cout << "Point is line base\n";
+            zero++;
+            continue;
+        }
+        x = points->at(i).x;
+        y = points->at(i).y;
+        if (check_y) {
+            double line_y = ((x - x1) * (y2 - y1) - y1 * x1 + y1 * x2) / (x2 - x1);
+            if (i == 0) {
+                if (y > line_y)side = true;
+                else side = false;
+            }
+            else {
+                bool now_side;
+                if (y > line_y) {
+                    now_side = true;
+                }
+                else now_side = false;
+
+                if (now_side != side) {
+                    is_on_one_side = false;
+                    break;
+                }
+            }
+        }
+        else {
+            double line_x = ((y - y1) * (x2 - x1) - x1 * y1 + x1 * y2) / (y2 - y1);
+            if (i == zero) {
+                if (x > line_x)side = false;
+                else side = true;
+            }
+            else {
+                bool now_side;
+                if (x > line_x) {
+                    now_side = false;
+                }
+                else now_side = true;
+
+                if (now_side != side) {
+                    is_on_one_side = false;
+                    break;
+                }
+            }
+        }
+        cout << "(" << x << "," << y << ")" << endl;
+    }
+    if (is_on_one_side) {
+        cout << "Every point is on one side\n";
+        return true;
+    }
+    else {
+        cout << "Not every point on one side\n";
+        return false;
+    }
+}
+
 int main(){
     bool stop = false;
     while (true) {
@@ -236,8 +355,38 @@ int main(){
             matrix_display(matrix, n);
 
         }
+
         else if (task == 2) {
-        //
+            vector <Point> points;
+            strip;
+            cout << " - Random input : 1\n - Hand input : 2\nType input method : ";
+            int method = prot_input(1, 2);
+            if (method == 2) {
+                hand_points_fill(&points);
+            }
+            else if (method == 1) {
+                random_points_fill(&points, { 0,0 }, {10,10});
+            }
+            display_points(&points);
+            
+            bool is_every_point = true;
+            for (int i = 0; i < size; i++) {
+                bool have_point = false;
+                for (int j = 0; j < size; j++) {
+                    if (i == j)continue;
+                    bool is_on_one_side = checks_points(&points, i, j);
+                    if (is_on_one_side) {
+                        have_point = true;
+                        break;
+                    }
+                }
+                if (!have_point) {
+                    is_every_point = false;
+                    break;
+                }
+            }
+            if (is_every_point)cout << "Yes\n";
+            else cout << "Not every point have so pair\n";
         }
         else if (task == 0) {
             stop = true;
