@@ -1,0 +1,131 @@
+ALTER SEQUENCE
+ALTER SEQUENCE
+ALTER SEQUENCE
+TRUNCATE TABLE
+INSERT 0 1
+ nextval 
+---------
+       1
+(1 строка)
+
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+ nextval 
+---------
+       7
+(1 строка)
+
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+ id |            covername             | songid 
+----+----------------------------------+--------
+  1 | Solence Cover                    |      2
+  2 | Niall Stenson Cover              |      3
+  3 | Radiotapok Cover                 |      4
+  4 | Tarja Turunen Cover              |      5
+  5 | Solence and Jonathan Young Cover |      6
+(5 строк)
+
+                    row                    
+-------------------------------------------
+ (Bismarck,Power-Metal,4)
+ (Californication,"Alternative Rock",2)
+ (Centuries,Pop-Rock,6)
+ (Faded,"Electro Music",10)
+ ("Frame of Mind","Electro Music",7)
+ ("I Walk Alone",Metal,5)
+ ("Let The Sparks Fly",Alternative,9)
+ ("Live Fast",Hip-Hop,10)
+ ("Lost in Time",Metal,11)
+ (Mortals,"Electro Music",13)
+ ("No Glory","Electro Music",1)
+ (Paradise,"Electro Music",10)
+ (Tenebrous,Rock,12)
+ ("The Search",Rap,8)
+ ("Transformers Prime OST","Epic Music",3)
+(15 строк)
+
+ id |   groupname    |    country    
+----+----------------+---------------
+  1 | Skan and Krale | France/Canada
+  2 | RHCP           | U.S.A.
+  3 | Brian Tyler    | U.S.A.
+ 10 | Alan Walker    | UK
+ 11 | Alan Walker    | UK
+ 12 | Alan Walker    | UK
+(6 строк)
+
+UPDATE 1
+UPDATE 1
+DELETE 1
+DELETE 1
+DELETE 1
+ id |            covername             | songid 
+----+----------------------------------+--------
+  2 | Niall Stenson Cover              |      3
+  3 | Radiotapok Cover                 |      4
+  4 | Tarja Turunen Cover              |      5
+  5 | Solence and Jonathan Young Cover |      6
+(4 строки)
+
+                    row                    
+-------------------------------------------
+ (Bismarck,Power-Metal,4)
+ (Centuries,Pop-Rock,6)
+ (Faded,"Electro Music",10)
+ ("I Walk Alone",Metal,5)
+ ("Let The Sparks Fly",Alternative,9)
+ ("Live Fast",Hip-Hop,10)
+ (Mortals,"Electro Music",13)
+ ("No Glory","Electro Music",1)
+ (Paradise,"Electro Music",10)
+ (Shapeshifter,Metal,11)
+ (Tenebrous,Rock,12)
+ ("Transformers Prime OST","Epic Music",3)
+ ("When i grow up",Rap,8)
+(13 строк)
+
+ id |   groupname    |    country    
+----+----------------+---------------
+  1 | Skan and Krale | France/Canada
+  3 | Brian Tyler    | U.S.A.
+ 10 | Alan Walker    | UK
+ 11 | Alan Walker    | UK
+ 12 | Alan Walker    | UK
+(5 строк)
+
