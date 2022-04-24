@@ -1,0 +1,105 @@
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+ nextval 
+---------
+       5
+(1 строка)
+
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+ nextval 
+---------
+       1
+(1 строка)
+
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+ id |   name   | trophies | strength 
+----+----------+----------+----------
+  1 | dynamike |      678 |       10
+  7 | nita     |      599 |        8
+  4 | jessie   |      599 |        9
+  2 | mr p     |      583 |       10
+  9 | spike    |      574 |        8
+  3 | barley   |      574 |        9
+  8 | piper    |      574 |        8
+  6 | edgar    |      568 |        9
+  5 | shelly   |      560 |        9
+(9 строк)
+
+              row              
+-------------------------------
+ (robomike,399)
+ ("unicorn knight barley",149)
+ ("golden barley",49)
+ ("wizard barely",49)
+ ("classic mike",0)
+(5 строк)
+
+ id |        name         |       description        | brawlerid 
+----+---------------------+--------------------------+-----------
+  1 | satchel charge      | stun for 1.5s            |         1
+  2 | fidget spinner      | spin and throw dinamite  |         1
+  3 | service bell        | buff porter              |         2
+  4 | porter reinforcment | next attack spawn porter |         2
+(4 строки)
+
+ gadgetid | brawlerid 
+----------+-----------
+        1 |         1
+        3 |         2
+        4 |         2
+(3 строки)
+
+UPDATE 1
+UPDATE 1
+DELETE 2
+DELETE 2
+DELETE 1
+DELETE 1
+ id |   name   | trophies | strength 
+----+----------+----------+----------
+  1 | dynamike |      678 |       10
+  4 | jessie   |      599 |        9
+  7 | nita     |      599 |        8
+  8 | piper    |      574 |        8
+  9 | spike    |      574 |        8
+  6 | edgar    |      568 |        9
+  5 | shelly   |      560 |        9
+(7 строк)
+
+        row         
+--------------------
+ (robomike,499)
+ ("classic mike",0)
+(2 строки)
+
+ id |      name      |       description       | brawlerid 
+----+----------------+-------------------------+-----------
+  1 | satchel charge | stun for 1.5s           |         1
+  2 | fidget spinner | spin and throw dinamite |         1
+(2 строки)
+
+ gadgetid | brawlerid 
+----------+-----------
+        1 |         1
+(1 строка)
+
